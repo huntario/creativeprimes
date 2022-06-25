@@ -143,10 +143,9 @@ const IndexPage = () => {
     <main style={pageStyles}>
       <title>Home Page</title>
       <h1 style={headingStyles}>
-        Congratulations
+        CreativePrimes
         <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        🎉🎉🎉
+        <span style={headingAccentStyles}>😎😎😎😎😎😎😎😎😎</span>
       </h1>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
