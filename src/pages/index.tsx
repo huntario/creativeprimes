@@ -140,16 +140,18 @@ const links = [
 
 export const hunter = graphql`
   query TypegenPage {
-    plainText(content: {}) {
-      id
-      content
+    allPlainText {
+      nodes {
+        id
+        content
+      }
     }
   }
 `
 
 // markup
 const IndexPage = ( { data } ) => {
-  const items = data.plainText;
+  const items = data.allPlainText.nodes;
   console.log(items);
   return (
     <main style={pageStyles}>
@@ -164,14 +166,12 @@ const IndexPage = ( { data } ) => {
         update in real-time. 😎
       </p>
       <ul style={doclistStyles}>
-        {docLinks.map(doc => (
+        {items.map(item => (
           <li style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
+            <p>
+              <span>{ item.id }</span>
+              <p>{ item.content }</p>
+            </p>
           </li>
         ))}
       </ul>
