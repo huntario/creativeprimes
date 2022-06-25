@@ -16,6 +16,13 @@ const config: GatsbyConfig = {
       "path": "./src/images/"
     },
     __key: "images"
+  },
+  `gatsby-transformer-plaintext`,
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `./src/data/`,
+    },
   }]
 };
 
