@@ -1,4 +1,0 @@
-﻿Here is another content article
-so if I go in and change this
-it will add all of this text 
-to the article content

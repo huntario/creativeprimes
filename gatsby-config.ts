@@ -10,20 +10,15 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
+    resolve: 'gatsby-source-google-docs',
     options: {
-      "name": "images",
-      "path": "./src/images/"
+      folder: "161M-YtSXIk5ydc3aW7NgIVVoLE9KGZ-L",
+      createPages: true,
     },
     __key: "images"
   },
-  `gatsby-transformer-plaintext`,
-  {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `./src/data/`,
-    },
-  }]
+  "gatsby-transformer-remark",
+  ]
 };
 
 export default config;

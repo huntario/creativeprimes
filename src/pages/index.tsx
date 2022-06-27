@@ -139,11 +139,13 @@ const links = [
 ]
 
 export const hunter = graphql`
-  query TypegenPage {
-    allPlainText {
+  query Content {
+    allMarkdownRemark {
       nodes {
-        id
-        content
+        html
+        frontmatter {
+          name
+        }
       }
     }
   }
@@ -151,7 +153,7 @@ export const hunter = graphql`
 
 // markup
 const IndexPage = ( { data } ) => {
-  const items = data.allPlainText.nodes;
+  const items = data.allMarkdownRemark.nodes;
   console.log(items);
   return (
     <main style={pageStyles}>
@@ -169,9 +171,9 @@ const IndexPage = ( { data } ) => {
         {items.map(item => (
           <li style={docLinkStyle}>
             <p>
-              <span>{ item.id }</span>
-              <p>{ item.content }</p>
+              <span>{ item.frontmatter.name }</span>
             </p>
+            { item.html }
           </li>
         ))}
       </ul>
