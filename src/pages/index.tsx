@@ -154,14 +154,11 @@ export const hunter = graphql`
 // markup
 const IndexPage = ( { data } ) => {
   const items = data.allMarkdownRemark.nodes;
-  console.log(items);
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
       <h1 style={headingStyles}>
         CreativePrimes
-        <br />
-        <span style={headingAccentStyles}>😎😎😎😎😎😎😎😎😎</span>
       </h1>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
