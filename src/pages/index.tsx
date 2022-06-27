@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 // styles
 const pageStyles = {
@@ -145,6 +145,7 @@ export const hunter = graphql`
         html
         frontmatter {
           name
+          slug
         }
       }
     }
@@ -160,17 +161,12 @@ const IndexPage = ( { data } ) => {
       <h1 style={headingStyles}>
         CreativePrimes
       </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
       <ul style={doclistStyles}>
         {items.map(item => (
           <li style={docLinkStyle}>
             <p>
-              <span>{ item.frontmatter.name }</span>
+            <Link to={ item.frontmatter.slug } ><span>{ item.frontmatter.name }</span></Link>
             </p>
-            { item.html }
           </li>
         ))}
       </ul>

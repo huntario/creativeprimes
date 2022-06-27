@@ -8,6 +8,22 @@ const pageStyles = {
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
   }
 
+const doclistStyles = {
+    paddingLeft: 0,
+  }
+const linkStyle = {
+    color: "#8954A8",
+    fontWeight: "bold",
+    fontSize: 16,
+    verticalAlign: "5%",
+  }
+const docLinkStyle = {
+    ...linkStyle,
+    listStyleType: "none",
+    display: `inline-block`,
+    marginBottom: 24,
+    marginRight: 12,
+  }
 const headingStyles = {
     marginTop: 0,
     marginBottom: 64,
@@ -33,7 +49,7 @@ const TemplatePage = ({
         https://support.google.com/docs/answer/86629
       */}
       {cover && <GatsbyImage image={getImage(cover.image)} />}
-      <div style={pageStyles} dangerouslySetInnerHTML={{__html: html}} />
+      <div style={docLinkStyle} dangerouslySetInnerHTML={{__html: html}} />
       <Link to="/">
         <button>{"Home"}</button>
       </Link>
