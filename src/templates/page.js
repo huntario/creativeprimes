@@ -12,8 +12,8 @@ const doclistStyles = {
     paddingLeft: 0,
   }
 const linkStyle = {
-    color: "#8954A8",
-    fontWeight: "bold",
+    color: "#2e3436",
+    fontWeight: "normal",
     fontSize: 16,
     verticalAlign: "5%",
   }
@@ -21,12 +21,12 @@ const docLinkStyle = {
     ...linkStyle,
     listStyleType: "none",
     display: `inline-block`,
-    marginBottom: 24,
+    marginBottom: 4,
     marginRight: 12,
   }
 const headingStyles = {
     marginTop: 0,
-    marginBottom: 64,
+    marginBottom: 24,
     maxWidth: 320,
   }
 

@@ -40,8 +40,8 @@ const listItemStyles = {
 }
 
 const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
+  color: "#232129",
+  fontWeight: "normal",
   fontSize: 16,
   verticalAlign: "5%",
 }
@@ -146,7 +146,12 @@ export const hunter = graphql`
         frontmatter {
           name
           slug
+          date(difference: "")
         }
+        wordCount {
+          words
+        }
+        excerpt
       }
     }
   }
@@ -165,8 +170,9 @@ const IndexPage = ( { data } ) => {
         {items.map(item => (
           <li style={docLinkStyle}>
             <p>
-            <Link to={ item.frontmatter.slug } ><span>{ item.frontmatter.name }</span></Link>
+            <Link to={ item.frontmatter.slug } ><span>{ item.frontmatter.name }</span> - { item.wordCount.words } words</Link>
             </p>
+            <p>{ item.excerpt }</p>
           </li>
         ))}
       </ul>
